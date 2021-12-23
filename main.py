@@ -35,8 +35,7 @@ def get_rand_music(number):
   #Access token number and store in variable
   df_objkt_id = df["data"]["hic_et_nunc_token"][number]["id"]
   # Format into a string to be returned by function
-  #link_string = f"https://hen.radio/objkt/{df_objkt_id}"
-  link_string = f"https://hic.art/{df_objkt_id}"
+  link_string = f"https://hen.radio/objkt/{df_objkt_id}"
   print(link_string)
   return link_string
 
