@@ -1,4 +1,7 @@
+# THIS BOT WAS MADE FOR THE HEN.RADIO DISCORD CHANNEL 
+
 # Tezos_Music_Bot pulls a random music mp3 NFT from hic dex and displays it in discord chat with a link and info when $music is called.
+
 
 #TO DO: Play music in Voice channel?
 #To Do: Add Tunes to database
@@ -26,13 +29,13 @@ def get_rand_music(number):
 }
 
 """
-  # post query to hicdex
+  # Post query to hicdex
   url = 'https://api.hicdex.com/v1/graphql'
   r = requests.post(url, json={'query': query})
   json_data = json.loads(r.text)
   # Convert to DataFrame
   df = pd.DataFrame(json_data)
-  #Access token number and store in variable
+  # Access token number and store in variable
   df_objkt_id = df["data"]["hic_et_nunc_token"][number]["id"]
   # Format into a string to be returned by function
   link_string = f"https://hen.radio/objkt/{df_objkt_id}"
@@ -48,6 +51,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
   """Defines action in Discord when bot recieves commands"""
+  
   if message.author == client.user:
     return
 
